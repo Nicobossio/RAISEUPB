@@ -5,6 +5,7 @@
 }
 body{
     background: #F2F2F2;
+    
 }
 nav{
     display: flex;
@@ -12,25 +13,34 @@ nav{
     justify-content: space-between;
     background: #FF0000;
     padding: 5px 5% ;
-
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    
+    
     
 }
 nav i{
     color: #FAFAFA;
     margin: 0 15px;
-    width: 28px;
+    font-size: 24px;
+    cursor: pointer;
+
+
 }
 .logo{
+    font-size: 25px;
+    letter-spacing: 1px;
     width: 160px;
     margin-right: 45px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    
+    font-weight:200;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
 }
 .nav-left ,.nav-right{
     display: flex;
     align-items: center;
     color: #FAFAFA;
+    
 }
 .nav-right p{
     font-family: Arial, Helvetica, sans-serif;
@@ -95,15 +105,22 @@ nav i{
     padding: 13px 5%;
 }
 .left-sidebar{
-    flex-basis:25%;
+    
+    flex-basis:20%;
     position: sticky;
     top: 70px;
     align-self: flex-start;
-    height: 100vh;
-
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+    
 }
+    
+    
+
+
 .right-sidebar{
-    flex-basis:25%;
+    flex-basis:20%;
     position: sticky;
     top: 70px;
     align-self: flex-start;
@@ -112,10 +129,14 @@ nav i{
     border-radius: 4px;
     color: #626262;
     margin-left: 100px;
+    
 }
 
 .main-content{
-    flex-basis: 47%;
+    flex-basis: 70%;
+    margin-left: 120px;
+    
+    
 }
 .imp-links a{
     text-decoration: none;
@@ -130,9 +151,7 @@ nav i{
     width: 25px;
     margin-right: 15px;
 }
-.imp-links:last-child{
-    color: #0000;
-}
+
 .imp-links{
     border-bottom: 1px solid #ccc;
 }
@@ -155,7 +174,7 @@ nav i{
 .write-post-container{
     width:100%;
     background: #fff;
-    border-radius: 60px;
+    border-radius: 6px;
     padding: 20px;
     columns: #626262;
 }
@@ -163,13 +182,205 @@ nav i{
     width:45px;
     border-radius:50%;
     margin-right:10px;
+    
 }
 .user-profile{
     display: flex;
     align-items: center;
 }
 .user-profile p {
-    margin-bottom: -5px;
-    font-weight: 500;
+    
+    font-weight:bold ;
+    color: #131212;
+    font-size: 20px;
+}
+.user-profile small{
+    font-size: 12px;
+
+}
+.post-input-container{
+    padding-left: 55px;
+    padding-top: 20px;
+}
+.post-input-container textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+    font-size: 14px;
+}
+
+/*https://www.youtube.com/watch?v=1-4RgF7AZJw
+Video de los radiobutton*/
+.radio h5{
+    font-weight:600;
+    color: #383636fa;
+    padding: 5px 5px;
+
+}
+.radio{
+    text-align: center;
+}
+.radio input[type="radio"]{
+    display: none;
+}
+.radio label{
+    color: #030258;
+    background:rgba(0, 0, 0, .1);
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    font-size: 1m;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+.radio label:hover{
+    /*El mismo color de arriba solo que en rgb #030258 */
+    background: rgba(57, 73,94, 0.2);
+}
+.radio label:before{
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    border: 3px solid #030258;
+    border-radius: 50%;
+    position: absolute;
+    left: 17px;
+    top: 3px;
+
+}
+.radio input[type="radio"]:checked+ label{
+    padding: 5px 15px;
+    background: #030258;
+    border-radius: 2px;
+    color: #fff;
+
+}
+.radio input[type="radio"]:checked+ label::before{
+    display: none;
+}
+.modal-container{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: 1000;
+
+}
+
+.modal{
+    
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+}
+.modal h1{
+    margin: 10px;
+
+}
+.modal p{
+    opacity: 0.7;
+    font-size: 18px;
+    margin: 20px;
+
+}
+.button{
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+    margin: 10px;    
+    cursor: pointer;
+}
+.cancelar{
+    background-color: #e41818;
+}
+
+
+.entendido{
+    background-color: #47a386;
+}
+.input-grupo{
+    pointer-events: none;
+    border: none;
+    font-weight:bold ;
+    color: #131212;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+#input-lider{
+    width: 145px;
+}
+
+.add-post-links{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    
+}
+.add-post-links a{
+    text-decoration: none;
+    display: flex;
+    align-items:flex-start;
     color: #626262;
+    margin-right: 30px;
+    font-size: 13p;
+    
+}
+.add-post-links i{
+    width: 20px;
+    margin-left: 10px;
+}
+
+.post-container{
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #626262;
+}
+.user-profile span{
+    font-size: 13px;
+    color: #9a9a9a;
+
+}
+.post-text{
+    color: #7a7878;
+    margin: 15px 0;
+    font-size: 20px;
+    
+
+}
+.post-img{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+
 }
